@@ -1,0 +1,197 @@
+
+/* 
+    #sidebar-wrapper {
+        min-height: 100vh;
+        margin-left: -15rem;
+        -webkit-transition: margin .25s ease-out;
+        -moz-transition: margin .25s ease-out;
+        -o-transition: margin .25s ease-out;
+        transition: margin .25s ease-out;
+      }
+      
+      #sidebar-wrapper .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+      }
+      
+      #sidebar-wrapper .list-group {
+        width: 350px;
+        padding: 0.9em;
+        h4{
+          font-size: 1.2em;
+          color: #F57232;
+        }
+        a{
+          color: #707070;
+          font-size: 0.9em;
+          border:white
+        }
+      
+        .list-group-item-action:hover {
+          z-index: 1;
+          color: #495057;
+          text-decoration: none;
+          background-color: #f7e6df;
+          opacity: 0.8;
+        }
+      }
+      
+      #page-content-wrapper {
+        min-width: 100vw;
+        .navbar{
+          padding: 0.85rem;
+          background: white;
+        }
+        #navbarSupportedContent{
+          .date{
+            margin-top: 0.4em !important;
+            color: darkslategrey;
+          }
+      
+          li{
+            span {
+              font-size: 15px;
+              opacity: 0.7;
+              margin-right: 17px;
+            }
+      
+            
+          }  
+        }
+        .container-fluid{
+          height: 100%;
+          h2{
+            padding: 1.1em;
+            font-size: 1.3em;
+            color: #F57232;
+          }
+      
+          #search_info{
+            margin: 1em;
+            font-size: 13px;
+            font-family: 'Rubik';
+            span:last-child {
+              margin-left: 2%;
+            }
+          }
+      
+          #search_info_saldo{
+            font-size: 13px;
+            font-family: 'Rubik';
+            background: #c3c5c7;
+            margin-bottom: 0 !important;
+            border-radius: 0.5rem;
+            strong:last-child {
+              margin-left: 2%;
+            }
+          }
+      
+          .table_wrapper{
+            background: white;
+            border-radius: 16px;
+            font-size: 13px;
+            font-family: 'Rubik';
+              
+            table { 
+                border-radius: 0.9em; 
+                .w-25 {
+                  width: 12%!important;
+                }
+            }
+            th    { color: dimgrey;text-align: center}
+            td    { color: grey;}
+          }
+      
+          
+        }
+        
+      }
+      
+      #wrapper.toggled #sidebar-wrapper {
+        margin-left: 0;
+      }
+      
+      @media (min-width: 768px) {
+        #sidebar-wrapper {
+          margin-left: 0;
+        }
+      
+        #page-content-wrapper {
+          min-width: 0;
+          width: 100%;
+          background:#e6e3e57a;
+          .header-content{
+            height: 10rem;
+            border-radius: 12px;
+            background: white;
+            .custom-form{
+              margin-top: 0.7em;
+             
+              select {
+                padding: 0.5rem;
+                width: 17rem;
+                margin-left: 4.6em;
+                border-radius: 0.7rem !important;
+                background: white;
+                color: grey;
+              }
+      
+              #filter{
+                margin-top: 1.7%;
+                button{
+                  width: 9%;
+                  border-radius: 4em;
+                  color: white;
+                  .rounded{
+                    border-radius: 1.5em
+                  }
+                }
+      
+                p{
+                  margin-top: 0.2em;
+                  margin-bottom: 0rem;
+                  margin-right: 2em;
+                  color: darkgrey;
+                }
+              }
+            
+            }
+      
+           
+          }
+      
+      
+          
+        }
+      
+        #wrapper.toggled #sidebar-wrapper {
+          margin-left: -15rem;
+        }
+      }
+      
+      
+      
+      
+      .p-2 {
+        padding: 1.5rem!important;
+       
+      }
+      
+      
+      //Colores personalizados
+      .bg-custom-1{
+      background: #e6e3e57a
+      }
+      
+      //Figuras personalizadas
+      .circle-custom{
+      background: #fbc528;
+      width: 39px;
+      color: white !important;
+      font-weight: 600;
+      border-radius: 2rem;
+      text-align: center;
+      }
+      
+      
+       */

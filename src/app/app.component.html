@@ -1,0 +1,292 @@
+
+<div class='container-fluid h-100'>
+  <!-- HEADER -->
+  <div class="row">
+    <div class="col p-0">
+      <header>
+          <nav role='navigation' id='rootNav' class="navbar py-3 Regular Small shadow border-0">
+              <a class="navbar-brand ml-5" href="#" (click)='hideMenu()'>
+                <img src="assets/logo.png" alt="logo">
+              </a>
+        
+              <ul class='nav mr-5'>
+                <li class='nav-item mr-3 mt-3 custom-font-1 '>
+                    <h6 class='font-weight-lighter text-black-50'>{{ActualDate | date:'d/M/y | h:m'}}</h6>
+                </li>
+                <li class='nav-item mb-2 mt-1'>
+                    <div class='dropdown'>
+                      <button id='btn_profile' role="button" aria-expanded="true" data-toggle="dropdown" width="44px" height="44px" class='btn-circle-custom Small shadow mr-1 bg-warning dropdown-toggle'>EL</button>
+                      <div class="dropdown-menu Small shadow rounded-lg border-1  dropdown-menu-right">
+                          <a class="dropdown-item" href="#">Reporte de Logs</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                      </div>
+                    </div>    
+                </li>
+              </ul>
+          </nav>
+      </header>
+    </div>
+  </div>
+  <!-- HEADER -->
+  
+  <!-- SIDEBAR AND CONTENT -->
+  <div id='content' class="row mt-2">
+    <div class="col-2 p-0 bg-warning">
+       <!-- SIDEBAR -->
+        <section id="sidebar" class='w-100'>  
+            <nav class='d-inline-flex h-100 w-100 pr-2'>
+                <ul class="list-group border-1 rounded w-100">
+                    <li id='item1' #item1 (click)= 'selectItem(item1)' [ngClass]="{'active': (ActiveSideItem === 'item1')}" class="list-group-item text-black-50 border-0 active">Ventas</li>
+                    <li id='item2' #item2 (click)= 'selectItem(item2)' [ngClass]="{'active': (ActiveSideItem === 'item2')}" class="list-group-item list-group-item-action  border-0">Avance de Ventas</li>
+                    <li id='item3' #item3 (click)= 'selectItem(item3)'[ngClass]="{'active': (ActiveSideItem === 'item3')}"  class="list-group-item list-group-item-action text-black-50 border-0">Cierre de Ventas Mensuales</li>
+                    <li id='item4' #item4 (click)= 'selectItem(item4)' [ngClass]="{'active': (ActiveSideItem === 'item4')}" class="list-group-item list-group-item-action text-black-50 border-0">Cierre de Ventas Acumulado Anual</li>
+                    <li id='item5' #item5 (click)= 'selectItem(item5)' [ngClass]="{'active': (ActiveSideItem === 'item5')}" class="list-group-item list-group-item-action text-black-50 border-0">Créditos y Cobranzas</li>
+                    <li id='item6' #item6 (click)= 'selectItem(item6)' [ngClass]="{'active': (ActiveSideItem === 'item6')}" class="list-group-item list-group-item-action text-black-50 border-0">Composición de Deuda <br>de Cuenta Corriente</li>
+                    <li id='item7' #item7 (click)= 'selectItem(item7)' [ngClass]="{'active': (ActiveSideItem === 'item7')}" class="list-group-item list-group-item-action text-black-50 border-0">Resumen de cuenta corriente</li>
+                    <li id='item8' #item8 (click)= 'selectItem(item8)'[ngClass]="{'active': (ActiveSideItem === 'item8')}"  class="list-group-item list-group-item-action text-black-50 border-0">Situación Crediticia</li>
+                    <li id='item9' #item9 (click)= 'selectItem(item9)' [ngClass]="{'active': (ActiveSideItem === 'item9')}" class="list-group-item list-group-item-action text-black-50 border-0">Saldo de Envases</li>
+                    <li id='item10' #item10 (click)= 'selectItem(item10)' [ngClass]="{'active': (ActiveSideItem === 'item10')}" class="list-group-item list-group-item-action text-black-50 border-0">Movimiento de Envase</li>
+                </ul>
+              </nav>
+        </section>
+        <!-- SIDEBAR -->
+    </div>
+    <div class="col-10 p-0">
+       <!-- CONTENT -->
+       <section id='main-content'>
+          <h3 class='p-2'>Saldo de Envases</h3>
+          <div class="row p-4 bg-black">
+            <div class="col">
+              <form class='p-5 bg-white rounded'>
+                <div class="row">
+                  <div class="col-md-12 col-lg-6 col-xl-3">
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+                      <option selected>Distribuidor</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-3">
+                    <input type="text" class="form-control" placeholder="Fecha">
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-3">
+                    <input type="text" class="form-control" placeholder="Fecha fin">
+                  </div>
+                  <div class="col-md-12 col-lg-6 col-xl-3">
+                    <input type="text" class="form-control" placeholder="Evases">
+                  </div>
+                </div>
+                <div class="row mt-4" > 
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Fecha fin">
+                      </div>
+                      <div class="col">
+                        <button type="submit" class="btn btn-primary bg-warning">Buscar</button>
+                      </div>
+                </div>
+              </form>
+            </div>  
+          </div>
+         <div class="row p-4  ">  
+           <div class="col">
+              <div class="table-responsive-sm">
+                  <table class="table table-striped bg-white table-bordered table-hover rounded w-auto ">
+                    <thead>
+                        <tr>
+                            <th class='th' scope="col">Codigo de Envase</th>
+                            <th class='th' scope="col">Descripcion</th>
+                           <th class='th-lg' scope="col">Area</th>
+                            <th class='th-lg' scope="col">Saldo a la fecha de inicio</th>
+                            <th class='th-lg' scope="col">Debitos</th>
+                            <th class='th-lg' scope="col">Creditos</th>
+                            <th class='th-lg' scope="col">Saldo a la fecha de fin</th>
+                            <th class='th-lg' scope="col">Precio Vigente</th>
+                            <th class='th-lg' scope="col">Saldo a la fecha de inicio ( $ )</th>
+                            <th class='th-lg' scope="col">Saldo a la fecha de fin ( $ )</th>
+                            <th class='th-lg' scope="col">Envases para calculo de credito</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th class='text-center' scope="row">10</th>
+                            <td class='text-center'>Botella Vacia 350 PC 24</td>
+                            <td class='text-center'>0</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>-4.500</td>
+                            <td>Sí</td>
+                          </tr>
+                          <tr>
+                              <th class='text-center' scope="row">10</th>
+                              <td class='text-center'>Botella Vacia 350 PC 24</td>
+                              <td class='text-center'>0</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>-4.500</td>
+                              <td>Sí</td>
+                            </tr>
+                            <tr>
+                                <th class='text-center' scope="row">10</th>
+                                <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                <td class='text-center'>0</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>-4.500</td>
+                                <td>Sí</td>
+                              </tr>
+                              <tr>
+                                  <th class='text-center' scope="row">10</th>
+                                  <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                  <td class='text-center'>0</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>-4.500</td>
+                                  <td>Sí</td>
+                                </tr>
+                                <tr>
+                                    <th class='text-center' scope="row">10</th>
+                                    <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                    <td class='text-center'>0</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>-4.500</td>
+                                    <td>Sí</td>
+                                  </tr>
+                                  <tr>
+                                      <th class='text-center' scope="row">10</th>
+                                      <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                      <td class='text-center'>0</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>-4.500</td>
+                                      <td>Sí</td>
+                                    </tr>
+                                    <tr>
+                                        <th class='text-center' scope="row">10</th>
+                                        <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                        <td class='text-center'>0</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>-4.500</td>
+                                        <td>Sí</td>
+                                      </tr>
+                                      <tr>
+                                          <th class='text-center' scope="row">10</th>
+                                          <td class='text-center'>Botella Vacia 350 PC 24</td>
+                                          <td class='text-center'>0</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>-4.500</td>
+                                          <td>Sí</td>
+                                        </tr>
+                    </tbody>
+                  </table>
+                </div>
+           </div>
+         </div>
+
+      
+       </section>
+       <!-- CONTENT -->
+    </div>
+  </div>
+   
+  <!-- SIDEBAR AND CONTENT -->
+
+
+</div>
+<router-outlet></router-outlet>
+
+
+<!-- 
+CODIGO ORIGINAL DEL LABURO -->
+
+
+<!-- HEADER 
+<header class="container-fluid p-0">
+    <nav role='navigation' id='rootNav' class="navbar py-4  Regular Small shadow border-0">
+        <a class="navbar-brand ml-5" href="#" (click)='hideMenu()'>
+          <img src="assets/logo.png" alt="logo">
+        </a>
+  
+        <ul class='nav mr-5'>
+          <li class='nav-item mr-3 mt-3 custom-font-1 '>
+              <h6 class='font-weight-lighter text-black-50'>{{ActualDate | date:'d/M/y | h:m'}}</h6>
+          </li>
+          <li class='nav-item mb-2 mt-1'>
+              <div class='dropdown'>
+                <button id='btn_profile' role="button" aria-expanded="true" data-toggle="dropdown" width="44px" height="44px" class='btn-circle-custom Small shadow mr-1 bg-warning dropdown-toggle'>EL</button>
+                <div class="dropdown-menu Small shadow rounded-lg border-1  dropdown-menu-right">
+                    <a class="dropdown-item" href="#">Ver Logs</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Cerrar Sesión</a>
+                </div>
+              </div>    
+          </li>
+        </ul>
+    </nav>
+  </header>
+  
+  
+  <section id='content' class='d-inline-flex '>
+   
+    <section #sidebar id='sidebar' class="pt-1">  
+            <nav>
+                <ul class="list-group border-1 rounded Small shadow">
+                    <li id='item1' #item1 (click)= 'selectItem(item1)' [ngClass]="{'active': (ActiveSideItem === 'item1')}" class="list-group-item text-black-50 border-0 active">Ventas</li>
+                    <li id='item2' #item2 (click)= 'selectItem(item2)' [ngClass]="{'active': (ActiveSideItem === 'item2')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Avance de Ventas</li>
+                    <li id='item3' #item3 (click)= 'selectItem(item3)'[ngClass]="{'active': (ActiveSideItem === 'item3')}"  class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Cierre de Ventas Mensuales</li>
+                    <li id='item4' #item4 (click)= 'selectItem(item4)' [ngClass]="{'active': (ActiveSideItem === 'item4')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Cierre de Ventas Acumulado Anual</li>
+                    <li id='item5' #item5 (click)= 'selectItem(item5)' [ngClass]="{'active': (ActiveSideItem === 'item5')}" class="list-group-item list-group-item-action text-black-50 border-0">Créditos y Cobranzas</li>
+                    <li id='item6' #item6 (click)= 'selectItem(item6)' [ngClass]="{'active': (ActiveSideItem === 'item6')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Composición de Deuda <br>de Cuenta Corriente</li>
+                    <li id='item7' #item7 (click)= 'selectItem(item7)' [ngClass]="{'active': (ActiveSideItem === 'item7')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Resumen de cuenta corriente</li>
+                    <li id='item8' #item8 (click)= 'selectItem(item8)'[ngClass]="{'active': (ActiveSideItem === 'item8')}"  class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Situación Crediticia</li>
+                    <li id='item9' #item9 (click)= 'selectItem(item9)' [ngClass]="{'active': (ActiveSideItem === 'item9')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Saldo de Envases</li>
+                    <li id='item10' #item10 (click)= 'selectItem(item10)' [ngClass]="{'active': (ActiveSideItem === 'item10')}" class="list-group-item list-group-item-action text-black-50 border-0  ml-3">Movimiento de Envase</li>
+                </ul>
+            </nav> 
+    </section>
+   
+  </section>  
+ 
+  
+
+     <section id='main-content'>
+        sdfsdfsdf
+    </section> 
+
+  -->

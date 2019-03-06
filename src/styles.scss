@@ -1,0 +1,138 @@
+@import './app/SASS/responsive.scss';
+
+//COLORS-----------------------------------------------------------------------------------------------------------------------------------------
+$button-rounded-color-hover: #B40000;
+$button-background: #fbc528;
+$header-background: white;
+$body-background:  rgba(255,255,255,1);
+$side-background: white;
+$main-content-background:#F2F2F2;
+$list-item-hover: #fff1ea;
+//COLORS-----------------------------------------------------------------------------------------------------------------------------------------
+
+//FONTS
+$font-1:'Rubik', sans-serif;;
+//FONTS
+
+
+/* You can add global styles to this file, and also import other style files */
+html, body,h1,h2, h3, h4, h5, h6 {
+    padding: 0 !important;
+    margin:0 !important;
+}   
+
+//BODY-----------------------------------------------------------------------------------------------------------------------------------------
+html,body{
+    height: 100vh;
+    background-color:$body-background;
+    font-family: $font-1;
+   //HEADER-----------------------------------------------------------------------------------------------------------------------------------------
+    header{
+        //height: 7.9vh;
+        background: $header-background
+    }
+   //HEADER-----------------------------------------------------------------------------------------------------------------------------------------
+  
+   //SIDEBAR-----------------------------------------------------------------------------------------------------------------------------------------
+    #sidebar{
+        background: $side-background;
+        font-family: 'Rubik', sans-serif;
+        height:92.1vh;
+        ul{
+            box-shadow:4px -1px 10px 1px #d4d4d4;
+            height: 100%;
+            li:hover{
+                color:#81888e!important;
+            }
+        }
+    }
+    //SIDEBAR-----------------------------------------------------------------------------------------------------------------------------------------
+    //MAINCONTENT-----------------------------------------------------------------------------------------------------------------------------------------
+    #main-content{
+        background:$main-content-background ;   
+        height:92.1vh;
+        
+        table th, table td {
+            padding: 0.3rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+            font-weight: 100;
+            text-align: center;
+        }
+         
+    }
+
+        .list-group-item .list-group-item-action:hover {
+            background-color: red !important;
+            color: red;
+        }
+    //MAINCONTENT-----------------------------------------------------------------------------------------------------------------------------------------    
+    .list-group-item.active { 
+        color: orange !important;
+        background-color:transparent;
+        font-weight: 600;   
+    }
+}
+
+
+
+.custom-font-1{
+    font-family: 'Rubik', sans-serif;
+}
+
+.btn-circle-custom{
+    background: $button-background;
+    width: 44px;
+    height: 44px;
+    color: #fff!important;
+    font-weight: 500;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0px;
+}
+
+.btn-circle-custom:hover{
+    background: $button-rounded-color-hover;
+}
+
+.shadow {
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.hideCmp{
+    margin-left: -1000px;
+    transition: 0.5s;
+    transition-timing-function: ease-out;
+    transition-timing-function: ease-in;
+}
+
+//REDEFINE BOOTSTRAP CLASES START
+
+.dropdown-toggle::after {
+    display: inline-block;
+    margin-left: 0 !important;
+    vertical-align: 0 !important;
+    content: "";
+    border:0 !important;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.list-group-item-action:hover{
+    background:$list-item-hover !important;
+    border-left: solid orange 3px !important;
+}
+
+.list-group-item .list-group-item:hover {
+    background-color: red !important;
+    border-left: solid #f7910b 0.3rem;
+}
+
+input,select{
+    border-radius: 0.6rem !important;
+}
+  
+
+//REDEFINE BOOTSTRAP CLASES END
